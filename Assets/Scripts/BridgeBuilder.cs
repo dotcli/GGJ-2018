@@ -22,20 +22,6 @@ public class BridgeBuilder : MonoBehaviour {
 	private BodySourceManager _BodyManager;
 
 	// We only care about arm joints
-	// TODO remove this if unused
-	// private Kinect.JointType[] _joints = {
-	// 	Kinect.JointType.HandTipLeft,
-	// 	Kinect.JointType.HandLeft,
-	// 	Kinect.JointType.WristLeft,
-	// 	Kinect.JointType.ElbowLeft,
-	// 	Kinect.JointType.ShoulderLeft,
-	// 	Kinect.JointType.SpineShoulder,
-	// 	Kinect.JointType.ShoulderRight,
-	// 	Kinect.JointType.ElbowRight,
-	// 	Kinect.JointType.WristRight,
-	// 	Kinect.JointType.HandRight,
-	// 	Kinect.JointType.HandTipRight
-	// };
 	private Dictionary<Kinect.JointType, Kinect.JointType> _BoneMap = new Dictionary<Kinect.JointType, Kinect.JointType>()
 	{
 		{ Kinect.JointType.HandTipLeft, Kinect.JointType.HandLeft },
