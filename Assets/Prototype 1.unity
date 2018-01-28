@@ -218,7 +218,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1518440477}
-  m_PlaneDistance: 15
+  m_PlaneDistance: 5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -483,7 +483,11 @@ MonoBehaviour:
   levels:
   - {fileID: 1461255877560912, guid: e2c270723621cdb458844bf85f4141c1, type: 2}
   - {fileID: 1650971465318266, guid: 3172c78f9dbd7b34ab83a5ac9f831645, type: 2}
-  BackgroundText: 
+  - {fileID: 1650971465318266, guid: 895c06c4e2b8c16418a242bac39c723d, type: 2}
+  - {fileID: 1650971465318266, guid: c8f9ad87db422c44a930432f382eb86b, type: 2}
+  - {fileID: 1650971465318266, guid: 4c45a77a7f181ae41abcc6bc6ecb2932, type: 2}
+  - {fileID: 1650971465318266, guid: ba3e7442cb50e874c88b7153e0157b06, type: 2}
+  - {fileID: 1650971465318266, guid: 210eace647eb3b74e953d6136b27eb63, type: 2}
   ScoreDisplay: {fileID: 536633386}
 --- !u!1 &1284225750
 GameObject:

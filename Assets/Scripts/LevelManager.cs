@@ -19,7 +19,6 @@ public class LevelManager : MonoBehaviour {
 
 	private int winBall = 0;
 	private int loseBall = 0;
-	public string BackgroundText = "";
 	public UnityEngine.UI.Text ScoreDisplay;
 	private enum LevelState {
 		Wait,
