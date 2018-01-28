@@ -13,6 +13,8 @@ public class BridgeBuilder : MonoBehaviour {
 	public Transform bridgeSegment;
 
 	public float bridgeThickness = 0.3f;
+	public float heightAdjustment = 0.0f;
+	public float scaleAdjustment = 1.0f;
 
 	public GameObject BodySourceManager;
 	private Dictionary<ulong, GameObject> _Bodies = new Dictionary<ulong, GameObject>();
@@ -82,7 +84,11 @@ public class BridgeBuilder : MonoBehaviour {
 		foreach(var body in data) {
 			if (body == null) continue;
 			if (!body.IsTracked) continue; // TODO is this really necessary? prev logic checks already
-			if (!_Bodies.ContainsKey(body.TrackingId)) _Bodies[body.TrackingId] = CreateBodyBridge(body.TrackingId);
+			if (!_Bodies.ContainsKey(body.TrackingId)) {
+				_Bodies[body.TrackingId] = CreateBodyBridge(body.TrackingId);
+			}
+			adjustBridgeScale(_Bodies[body.TrackingId]);
+			adjustBridgeHeight(_Bodies[body.TrackingId]);
 			RefreshBodyBridge(body, _Bodies[body.TrackingId]);
 		}
 	}
@@ -112,6 +118,13 @@ public class BridgeBuilder : MonoBehaviour {
 			float angle = Vector3.SignedAngle(boneDirection, Vector3.right, Vector3.back);
 			segmentObj.localRotation = Quaternion.AngleAxis(angle, Vector3.forward);
 		}
+	}
+
+	private void adjustBridgeScale(GameObject bodyBridge) {
+		bodyBridge.transform.localScale = new Vector3(scaleAdjustment, scaleAdjustment, 1);
+	}
+	private void adjustBridgeHeight(GameObject bodyBridge) {
+		bodyBridge.transform.localPosition = new Vector3(0, heightAdjustment, 0);
 	}
 
 	private Transform SpawnSegment() {

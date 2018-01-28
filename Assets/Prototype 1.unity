@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 1284225751}
   - component: {fileID: 1284225753}
   m_Layer: 0
-  m_Name: BodyView
+  m_Name: BridgeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,6 +493,8 @@ MonoBehaviour:
   bridgeSegment: {fileID: 4442399088445876, guid: 9ae048791cdf1714a9bfa9a0cef317be,
     type: 2}
   bridgeThickness: 0.3
+  heightAdjustment: -4
+  scaleAdjustment: 0.8
   BodySourceManager: {fileID: 313239344}
 --- !u!1 &1518440474
 GameObject:
