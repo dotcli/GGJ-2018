@@ -492,7 +492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bridgeSegment: {fileID: 4442399088445876, guid: 9ae048791cdf1714a9bfa9a0cef317be,
     type: 2}
-  bridgeThickness: 0.3
+  bridgeThickness: 0.5
   heightAdjustment: -4
   scaleAdjustment: 0.8
   BodySourceManager: {fileID: 313239344}
@@ -537,7 +537,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -682,8 +682,8 @@ WheelJoint2D:
     m_Angle: 90
   m_UseMotor: 1
   m_Motor:
-    m_MotorSpeed: -1000
-    m_MaximumMotorForce: 100000
+    m_MotorSpeed: -2000
+    m_MaximumMotorForce: 1000000
 --- !u!50 &1699334938
 Rigidbody2D:
   serializedVersion: 4
