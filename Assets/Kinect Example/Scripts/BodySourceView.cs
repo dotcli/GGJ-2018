@@ -43,14 +43,13 @@ public class BodySourceView : MonoBehaviour
         { Kinect.JointType.Neck, Kinect.JointType.Head },
     };
     
+    void Start() {
+        if (BodySourceManager == null) return;
+        _BodyManager = BodySourceManager.GetComponent<BodySourceManager>();
+    }
+
     void Update () 
     {
-        if (BodySourceManager == null)
-        {
-            return;
-        }
-        
-        _BodyManager = BodySourceManager.GetComponent<BodySourceManager>();
         if (_BodyManager == null)
         {
             return;
@@ -109,16 +108,17 @@ public class BodySourceView : MonoBehaviour
     
     private GameObject CreateBodyObject(ulong id)
     {
-        GameObject body = new GameObject("Body:" + id);
+        GameObject body = new GameObject("Body View:" + id);
         
         for (Kinect.JointType jt = Kinect.JointType.SpineBase; jt <= Kinect.JointType.ThumbRight; jt++)
         {
             GameObject jointObj = GameObject.CreatePrimitive(PrimitiveType.Cube);
             
             LineRenderer lr = jointObj.AddComponent<LineRenderer>();
-            lr.SetVertexCount(2);
+            lr.positionCount = 2;
             lr.material = BoneMaterial;
-            lr.SetWidth(0.05f, 0.05f);
+            lr.startWidth = 0.05f;
+            lr.endWidth = 0.05f;
             
             jointObj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             jointObj.name = jt.ToString();
