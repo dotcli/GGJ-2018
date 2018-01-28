@@ -19,7 +19,8 @@ public class LevelManager : MonoBehaviour {
 
 	private int winBall = 0;
 	private int loseBall = 0;
-	public string StrScore = "";
+	public string BackgroundText = "";
+	public UnityEngine.UI.Text ScoreDisplay;
 	private enum LevelState {
 		Wait,
 		Ongoing,
@@ -74,11 +75,12 @@ public class LevelManager : MonoBehaviour {
 	private void spawnLevel(int index) {
 		activeLevel = Instantiate(levels[index]);
 		resetScore();
+		ScoreDisplay.text = "Level " + (index+1);
 	}
 	private void resetScore() {
 		winBall = 0;
 		loseBall = 0;
-		StrScore = "";
+		ScoreDisplay.text = "";
 	}
 	private void gotoNextLevel() {
 		destroyAllVehicles();
@@ -91,6 +93,7 @@ public class LevelManager : MonoBehaviour {
 	// start the level after initial wait's over
 	private void startLevel() {
 		state = LevelState.Ongoing;
+		ScoreDisplay.text = "Go!";
 	}
 	private void spawnVehicle() {
 		GameObject _vehicle = Instantiate(vehicle, activeLevel.transform.Find("Spawn Point").position, Quaternion.identity);
@@ -118,19 +121,16 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void RegisterWinBall() {
-		Debug.Log("Good ball");
 		winBall += 1;
 		checkLevelCompletion();
 	}
 	public void RegisterLoseBall() {
-		Debug.Log("Bad ball");
 		loseBall += 1;
 		checkLevelCompletion();
 	}
 	private void checkLevelCompletion() {
+		ScoreDisplay.text = winBall + "/" + vehicleAmount;
 		if (winBall + loseBall < vehicleAmount) return;
-		StrScore = winBall + "/" + vehicleAmount;
-		Debug.Log("Score: " + StrScore);
 		state = LevelState.Ended;
 	}
 }
