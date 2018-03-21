@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using Kinect = Windows.Kinect;
@@ -13,8 +14,8 @@ public class BridgeBuilder : MonoBehaviour {
 	public Transform bridgeSegment;
 
 	public float bridgeThickness = 0.3f;
-	public float heightAdjustment = 0.0f;
-	public float scaleAdjustment = 1.0f;
+	public Slider heightSlider;
+	public Slider scaleSlider;
 
 	public GameObject BodySourceManager;
 	private Dictionary<ulong, GameObject> _Bodies = new Dictionary<ulong, GameObject>();
@@ -107,10 +108,10 @@ public class BridgeBuilder : MonoBehaviour {
 	}
 
 	private void adjustBridgeScale(GameObject bodyBridge) {
-		bodyBridge.transform.localScale = new Vector3(scaleAdjustment, scaleAdjustment, 1);
+		bodyBridge.transform.localScale = new Vector3(scaleSlider.value, scaleSlider.value, 1);
 	}
 	private void adjustBridgeHeight(GameObject bodyBridge) {
-		bodyBridge.transform.localPosition = new Vector3(0, heightAdjustment, 0);
+		bodyBridge.transform.localPosition = new Vector3(0, heightSlider.value, 0);
 	}
 
 	private Transform SpawnSegment() {
