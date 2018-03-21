@@ -914,6 +914,8 @@ MonoBehaviour:
   - {fileID: 1650971465318266, guid: c8f9ad87db422c44a930432f382eb86b, type: 2}
   - {fileID: 1650971465318266, guid: 4c45a77a7f181ae41abcc6bc6ecb2932, type: 2}
   - {fileID: 1650971465318266, guid: ba3e7442cb50e874c88b7153e0157b06, type: 2}
+  - {fileID: 1650971465318266, guid: de7359ae7145d674fbd554eb2e68d589, type: 2}
+  - {fileID: 1650971465318266, guid: 5aa1dbf08522e5a47be3db2c3e36df86, type: 2}
   - {fileID: 1650971465318266, guid: 210eace647eb3b74e953d6136b27eb63, type: 2}
   ScoreDisplay: {fileID: 536633386}
 --- !u!1 &1248151907
