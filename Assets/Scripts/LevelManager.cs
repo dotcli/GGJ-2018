@@ -105,20 +105,6 @@ public class LevelManager : MonoBehaviour {
 		}
 		_vehicles.Clear();
 	}
-	private void checkVehicleSuccess() {
-		// TODO determine victory
-
-		// TODO old code for ref
-		// if (_vehicle == null) return;
-		// vehicleScreenPos = cam.WorldToScreenPoint(_vehicle.transform.position);
-		// float x = (float)vehicleScreenPos.x / Screen.width;
-		// float y = (float)vehicleScreenPos.y / Screen.height;
-		// if (x > 1 || x < 0 || y > 1 || y < 0) {
-		// 	destroyVehicle();
-		// 	spawnVehicle();
-		// }
-	}
-
 	public void RegisterWinBall() {
 		winBall += 1;
 		checkLevelCompletion();
