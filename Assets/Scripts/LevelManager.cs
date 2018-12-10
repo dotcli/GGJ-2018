@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
 
 	public GameObject vehicle;
+    public float levelMaxTime = 50.0f;
 	public float levelWaitTime = 10.0f;
 	public float endWaitTime = 10.0f;
 	public float vehicleFrequency = 2.0f;
@@ -46,13 +47,18 @@ public class LevelManager : MonoBehaviour {
 				}
 				break;
 			case LevelState.Ongoing:
-				if (timer > vehicleFrequency) {
-					if (_vehicles.Count < vehicleAmount) {
-						spawnVehicle();
-					}
-					timer = 0;
+				if (timer > vehicleFrequency && _vehicles.Count < vehicleAmount) {
+					spawnVehicle();
+                    timer = 0;
 				}
 				// NOTE to move on from here, a trigger keeps track of score
+                // If the level goes on for too long however (e.g. balls stuck)
+                // The end would come.
+                if (timer > levelMaxTime)
+                {
+                    state = LevelState.Ended;
+                    timer = 0;
+                }
 				break;
 			case LevelState.Ended:
 				if (timer > endWaitTime) {
@@ -117,5 +123,6 @@ public class LevelManager : MonoBehaviour {
 		ScoreDisplay.text = winBall + "/" + vehicleAmount;
 		if (winBall + loseBall < vehicleAmount) return;
 		state = LevelState.Ended;
+        timer = 0;
 	}
 }
