@@ -126,7 +126,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.25, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
 --- !u!114 &114994208682030746
@@ -200,8 +200,8 @@ WheelJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
+  m_Anchor: {x: 0.25, y: 0}
+  m_ConnectedAnchor: {x: 0.25, y: 0}
   m_Suspension:
     m_DampingRatio: 1
     m_Frequency: 2

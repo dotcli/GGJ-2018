@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bridgeSegment: {fileID: 4442399088445876, guid: 9ae048791cdf1714a9bfa9a0cef317be,
     type: 2}
-  bridgeThickness: 2
+  bridgeThickness: 4
   heightSlider: {fileID: 1248151909}
   scaleSlider: {fileID: 458710265}
   BodySourceManager: {fileID: 313239344}

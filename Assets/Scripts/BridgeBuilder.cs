@@ -96,13 +96,14 @@ public class BridgeBuilder : MonoBehaviour {
 			Vector3 targetJoint = GetVector3FromJoint2D(body.Joints[bone.Value]);
 			Transform segmentObj = bodyBridge.transform.Find(bone.ToString());
 			// calculate position using the avg of two joints
-			segmentObj.localPosition = (sourceJoint + targetJoint) / 2.0f;
-			// calculate scale using the distance between two joints
+			segmentObj.localPosition = (sourceJoint + targetJoint) / 2.0f;            
+            // calculate scale using the distance between two joints
 			Vector3 boneDirection = (targetJoint - sourceJoint);
 			float boneLength = boneDirection.magnitude;
-			segmentObj.localScale = new Vector3(boneLength, bridgeThickness, 1);
-			// calculate rotation using the angle between two joints
-			float angle = Vector3.SignedAngle(boneDirection, Vector3.right, Vector3.back);
+            segmentObj.localScale = new Vector3(bridgeThickness, bridgeThickness, 1);
+            //segmentObj.localScale = new Vector3(boneLength, bridgeThickness, 1);
+            // calculate rotation using the angle between two joints
+            float angle = Vector3.SignedAngle(boneDirection, Vector3.right, Vector3.back);
 			segmentObj.localRotation = Quaternion.AngleAxis(angle, Vector3.forward);
 		}
 	}
