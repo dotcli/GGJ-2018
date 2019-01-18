@@ -5,10 +5,11 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour {
 
 	public GameObject vehicle;
-    public float levelMaxTime = 50.0f;
+  public float levelMaxTime = 50.0f;
 	public float levelWaitTime = 10.0f;
 	public float endWaitTime = 10.0f;
 	public float vehicleFrequency = 2.0f;
+	public int scoreToAdvance = 12;
 	public int vehicleAmount = 20;
 	public GameObject[] levels;
 	private int levelIndex = 0;
@@ -49,16 +50,17 @@ public class LevelManager : MonoBehaviour {
 			case LevelState.Ongoing:
 				if (timer > vehicleFrequency && _vehicles.Count < vehicleAmount) {
 					spawnVehicle();
-                    timer = 0;
+					timer = 0;
 				}
 				// NOTE to move on from here, a trigger keeps track of score
-                // If the level goes on for too long however (e.g. balls stuck)
-                // The end would come.
-                if (timer > levelMaxTime)
-                {
-                    state = LevelState.Ended;
-                    timer = 0;
-                }
+				// If the level goes on for too long however (e.g. balls stuck)
+				// The end would come.
+				if (timer > levelMaxTime)
+				{
+						state = LevelState.Ended;
+						timer = 0;
+						checkGameOver();
+				}
 				break;
 			case LevelState.Ended:
 				if (timer > endWaitTime) {
@@ -123,6 +125,17 @@ public class LevelManager : MonoBehaviour {
 		ScoreDisplay.text = winBall + "/" + vehicleAmount;
 		if (winBall + loseBall < vehicleAmount) return;
 		state = LevelState.Ended;
-        timer = 0;
+		timer = 0;
+		checkGameOver();
+	}
+
+	// if player didn't win enough ball,
+	// display game over,
+	// and next level will be lvl 1
+	private void checkGameOver() {
+		if (winBall < scoreToAdvance) {
+			ScoreDisplay.text = "GAME OVER";
+			levelIndex = -1;
+		}
 	}
 }
