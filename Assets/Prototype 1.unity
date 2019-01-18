@@ -910,6 +910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehicle: {fileID: 1359063575392540, guid: 5535e1c4eea2aad4d9e1a8bb98320dfb, type: 2}
+  levelMaxTime: 50
   levelWaitTime: 3
   endWaitTime: 5
   vehicleFrequency: 0.2
