@@ -213,7 +213,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.2631579, y: 1}
+  m_AnchorMax: {x: 0.33333334, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -464,9 +464,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1697353576}
   m_Direction: 0
   m_MinValue: 0.1
-  m_MaxValue: 2
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.6
+  m_Value: 0.4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -914,6 +914,7 @@ MonoBehaviour:
   levelWaitTime: 3
   endWaitTime: 5
   vehicleFrequency: 0.2
+  scoreToAdvance: 12
   vehicleAmount: 20
   levels:
   - {fileID: 1461255877560912, guid: e2c270723621cdb458844bf85f4141c1, type: 2}
@@ -1002,10 +1003,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 88458021}
   m_HandleRect: {fileID: 1937713188}
   m_Direction: 0
-  m_MinValue: -4
-  m_MaxValue: 4
+  m_MinValue: -8
+  m_MaxValue: 2
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: -3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1563,8 +1564,8 @@ RectTransform:
   m_Father: {fileID: 1377659741}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.2631579, y: 0}
-  m_AnchorMax: {x: 0.2631579, y: 1}
+  m_AnchorMin: {x: 0.33333334, y: 0}
+  m_AnchorMax: {x: 0.33333334, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
